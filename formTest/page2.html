@@ -1,0 +1,31 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+    	<title>Page2</title>
+		<link rel="stylesheet" href="./style.css">
+	</head>
+	<body>
+		<form>
+			<div>
+				<label for="txt">送信された文字:</label>
+				<input type="text" id="txt" readonly />
+			</div>
+			<div>
+				<label for="txtFromHidden">隠し文字:</label>
+				<input type="text" id="txtFromHidden" readonly />
+			</div>
+		</form>
+		<script type="text/javascript">
+			window.onload = function() {
+				const urlParams = new URLSearchParams(window.location.search);
+				const testString = urlParams.get('testString');
+				let txt = document.querySelector('#txt');
+				txt.value = testString;
+
+				const hiddenString = urlParams.get('hiddenString');
+				let txtFromHidden = document.querySelector('#txtFromHidden');
+				txtFromHidden.value = hiddenString;
+			};
+		</script>
+	</body>
+</html>

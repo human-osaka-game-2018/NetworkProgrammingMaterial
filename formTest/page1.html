@@ -1,0 +1,20 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+    	<title>Page1</title>
+		<link rel="stylesheet" href="./style.css">
+	</head>
+	<body>
+		<form action="./page2.html" method="GET">
+			<div class="message">文字を入力してから送信ボタンを押して下さい</div>
+			<div>
+				<label for="text">送信する文字:</label> 
+				<input type="text" id="txtTest" name="testString" />
+				<input type="hidden" id="txtHidden" name="hiddenString" value="隠し文字" />
+			</div>
+			<div class="button">
+				<button type="submit">送信</button>
+			</div>
+		</form>
+	</body>
+</html>
