@@ -1,0 +1,153 @@
+body {
+	position: relative;
+	margin: 0px;
+	background: linear-gradient(to bottom right, #00FCAA, #7776EC);
+	color: rgba(70, 70, 70, 0.9);
+	font-family: "Meiryo";
+}
+
+#header {
+	padding: 8px 0px;
+	background-color: rgba(255, 255, 255, 0.4);
+
+	/* 左右目一杯まで広げる */
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+
+	display: flex;
+	justify-content: space-around;
+
+	/* メイン部分をスクロールしたときにヘッダの裏側に重なるようにする */
+	z-index: 1;
+
+	/* menuの大きさに合わせて高さが変わるようにhightの指定は行わない */
+}
+
+.menu {
+	width: 10rem;
+	padding: 8px;
+	background-color: #60a8cf;
+	border-radius: 5rem;
+	color: rgba(250, 250, 250, 0.9);
+	text-align: center;
+	vertical-align: middle;
+
+	/* 文字サイズの大きさに合わせて高さが変わるようにhightの指定は行わない */
+}
+
+#main {
+	/* 
+		文字サイズを大きくした場合にヘッダ部分の高さが大きくなってメイン部分と被らないように
+		上側のpaddingはrem指定にしておく
+	 */
+	padding: 6rem 10%;
+
+	/* 要素の高さに合わせて高さが変わるようにhightの指定は行わない */
+}
+
+.contentArea {
+	/* 左右のmarginをautoに設定することで左右中央揃えを実現 */
+	margin: 32px auto;
+
+	padding: 8px;
+	padding-right: 0px;
+	background-color: rgba(255, 255, 255, 0.6);
+	display: flex;
+
+	/* 要素の高さに合わせて高さが変わるようにhightの指定は行わない */
+}
+
+.contentArea>* {
+	/* 
+		flex-box内の要素の文字が要素からはみださないようにする仕掛け 
+		参考: https://qiita.com/mpyw/items/dfc63c1fed5dfc5eda26
+	*/
+	min-width: 0;
+}
+
+.contentLevel2 {
+	margin-left: 96px;
+}
+
+.markArea {
+	/* 他のFlexアイテムの幅によってこの要素の幅が変わらないように固定する */
+	flex-basis: 80px;
+	flex-shrink: 0;
+
+	/* 子要素を中心に配置するためにflex-boxを使用 */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.contentLevel1 .mark {
+	width: 48px;
+	height: 48px;
+	transform: rotate(45deg);
+	background-color: rgba(251, 99, 255, 0.7);
+}
+
+.contentLevel2 .mark {
+	/* 正三角形 */
+	border-right: 30px solid transparent;
+	border-bottom: 42.42640px solid rgba(119, 118, 236, 0.7);
+	border-left: 30px solid transparent; 
+}
+
+.content {
+	margin-left: 24px;
+
+	/* 親要素の幅に合わせて幅が拡縮するようにする */
+	flex-grow: 2;
+
+	/* 要素の高さに合わせて高さが変わるようにhightの指定は行わない */
+}
+
+.title {
+	border: 5px solid rgba(255, 255, 255, 0.2);
+	border-right: 0px;
+	margin-top: 8px;
+	padding: 2px 8px 2px 16px;
+	color: rgba(90, 90, 90, 0.9);
+
+	/* 文字の量やフォントサイズに合わせてサイズが変わるようにhight/widthの指定は行わない */
+}
+
+.contentLevel1 .title {
+	background-color: rgba(251, 99, 255, 0.7);
+}
+
+.contentLevel2 .title {
+	background-color: rgba(119, 118, 236, 0.7);
+}
+
+.message {
+	margin: 0 8px;
+
+	/* 文字の量やフォントサイズに合わせてサイズが変わるようにhight/widthの指定は行わない */
+}
+
+#backToTop {
+	width: 48px;
+	height: 48px;
+	border-radius: 50%;
+	background-color: rgba(96, 168, 207, 0.8);
+	filter: drop-shadow(4px 4px 2px #222222);
+	position: fixed;
+	bottom: 8px;
+	right: 16px;
+
+	/* 子要素を中心に配置するためにflex-boxを使用 */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#backToTop p {
+	margin: 0;
+	color: rgba(255, 255, 255, 0.7);
+	font-size: 32px;
+	filter: drop-shadow(4px 4px 2px #444444);
+}
